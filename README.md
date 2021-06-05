@@ -4,7 +4,7 @@ This project aims to dramatically reduce the environmental footprint of the Cal 
 through the development of a reusable food container system. This repository contains the source code 
 for the RFID tracking system to manage all customer container checkouts and returns. 
 
-### The repository contains the following three folders with additional instructions in the corresponding directories:
+### The repository contains the following folders with more instructions in the corresponding directories:
 
 **Alien Scanner**
 
