@@ -1,0 +1,88 @@
+
+
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>Login Form Tutorial</title>
+		<style>
+		.login-form {
+			width: 300px;
+			margin: 0 auto;
+			font-family: Tahoma, Geneva, sans-serif;
+		}
+		.login-form h1 {
+			text-align: center;
+			color: #4d4d4d;
+			font-size: 24px;
+			padding: 20px 0 20px 0;
+		}
+		.login-form input[type="password"],
+		.login-form input[type="text"] {
+			width: 100%;
+			padding: 15px;
+			border: 1px solid #dddddd;
+			margin-bottom: 15px;
+			box-sizing:border-box;
+		}
+		.login-form input[type="submit"] {
+			width: 100%;
+			padding: 15px;
+			background-color: #535b63;
+			border: 0;
+			box-sizing: border-box;
+			cursor: pointer;
+			font-weight: bold;
+			color: #ffffff;
+		}
+		</style>
+      <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+	</head>
+	<body>
+		<script>
+			function getData() {
+				$.get("http://3709db42.ngrok.io", (data) => {
+				element = document.getElementsByClassName("message")[0];
+				element.innerHTML = "message: " + data;
+				});
+			}
+		</script>
+		<p class="message">message: </p>
+		<button onclick="getData()"></button>
+
+
+		<div class="login-form">
+			<h1>Login Form</h1>
+			<form action="auth" method="POST">
+				<input type="text" name="username" placeholder="Username" required>
+				<input type="password" name="password" placeholder="Password" required>
+				<input type="submit">
+			</form>
+		</div>
+	
+
+		<br>
+		<div style="margin: 0 20px">
+			<h2>REGISTER USER</h2>
+			<form action="/register" method="POST">  
+			Username: <input type="text" name="username">  
+			Paswword: <input type="password" name="password">
+			Email: <input type="text" name="email">
+			First Name: <input type="text" name="firstName">
+			Last Name: <input type="text" name="lastName">
+			<input type="submit" value="Submit">  
+			</form>
+		</div>
+
+		<div style="margin: 0 20px">
+			<h2>ADD ACTIVITY</h2>
+			<form action="/activity" method="POST">  
+			NAME: <input type="text" name="name">  
+			timegoal: <input type="text" name="timeGoal">  
+			color: <input type="text" name="color">  
+			<input type="submit" value="Submit">  
+			</form>
+		</div>
+		
+
+	</body>
+</html>
